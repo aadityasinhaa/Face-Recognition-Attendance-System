@@ -46,7 +46,7 @@ def load_known_faces():
 
             known_encodings.append(enc[0])
             known_names.append(os.path.splitext(file)[0])
-            print(f"✅ Loaded {file}")
+            print(f"Loaded {file}")
 
         except Exception as e:
             print(f"[ERROR] {file} → {e}")
@@ -55,7 +55,7 @@ def load_known_faces():
 def mark_attendance(name):
     global marked_students
 
-    # 🚫 Prevent duplicate attendance
+    #Prevent duplicate attendance
     if name in marked_students:
         return
 
@@ -75,7 +75,7 @@ def mark_attendance(name):
 
         writer.writerow([name, date_today, time_now])
 
-    print(f"📝 Attendance marked for {name} on {date_today}")
+    print(f"Attendance marked for {name} on {date_today}")
 
 # ================= CAMERA FUNCTIONS =================
 def start_attendance():
@@ -87,11 +87,11 @@ def start_attendance():
     cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
     if not cap.isOpened():
-        print("❌ Camera not opened")
+        print("Camera not opened")
         return
 
     camera_running = True
-    print("✅ Camera started")
+    print("Camera started")
 
     def update_frame():
         global camera_running, cap
@@ -143,7 +143,7 @@ def stop_attendance():
         cap = None
 
     cv2.destroyAllWindows()
-    print("🛑 Camera stopped")
+    print("Camera stopped")
 
 # ================= GUI SETUP =================
 ctk.set_appearance_mode("dark")
@@ -175,4 +175,5 @@ app.protocol("WM_DELETE_WINDOW", on_close)
 # ================= INIT =================
 load_known_faces()
 app.mainloop()
+
 
