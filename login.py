@@ -34,7 +34,7 @@ frame.pack(padx=20, pady=20, fill="both", expand=True)
 
 title = ctk.CTkLabel(
     frame,
-    text="🔐 Login",
+    text="Login",
     font=ctk.CTkFont(size=26, weight="bold")
 )
 title.pack(pady=(40, 10))
@@ -82,3 +82,4 @@ footer = ctk.CTkLabel(
 footer.pack(side="bottom", pady=15)
 
 app.mainloop()
+
