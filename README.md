@@ -64,8 +64,8 @@ Always use NumPy 1.24.4.
 
 🔧 Setup Instructions
 1️⃣ Clone Repository
-git clone https://github.com/aadityasinhaa/face-recognition-attendance.git
-cd face-recognition-attendance
+git clone https://github.com/aadityasinhaa/Face-Recognition-Attendance-System.git
+cd Face-Recognition-Attendance-System
 
 2️⃣ Create Virtual Environment
 python -m venv .venv
@@ -138,4 +138,5 @@ Database integration
 📜 License
 
 This project is free for educational use.
+
 Feel free to fork, modify, and improve.
