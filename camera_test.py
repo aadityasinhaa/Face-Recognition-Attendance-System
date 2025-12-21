@@ -13,4 +13,5 @@ for backend in [cv2.CAP_DSHOW, cv2.CAP_MSMF, cv2.CAP_ANY]:
         cv2.destroyAllWindows()
         break
     else:
-        print("❌ Failed")
+        print("Failed!")
+
