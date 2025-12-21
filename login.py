@@ -15,7 +15,7 @@ def login():
         messagebox.showinfo("Login Successful", "Welcome!")
         app.destroy()
         subprocess.Popen([sys.executable, "gui_attendance.py"])
-
+#you can also add your login credentials like this show below.
     elif username == "aaditya" and password == "aaditya123":
         messagebox.showinfo("Login Successful", "Welcome!")
         app.destroy()
@@ -82,4 +82,5 @@ footer = ctk.CTkLabel(
 footer.pack(side="bottom", pady=15)
 
 app.mainloop()
+
 
