@@ -6,21 +6,29 @@ import sys
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
+# Credentials dictionary – add or remove users here without touching login logic.
+# TODO: Before deploying to production, replace plaintext passwords with a
+# secure credential store (e.g., environment variables, a config file with
+# hashed passwords using bcrypt/argon2, or a proper authentication service).
+USERS = {
+    "admin": "admin123",
+    "aaditya": "aaditya123",
+}
+
+# ---------------- HELPERS ----------------
+def launch_attendance_app():
+    """Destroy the login window and open the attendance system."""
+    messagebox.showinfo("Login Successful", "Welcome!")
+    app.destroy()
+    subprocess.Popen([sys.executable, "gui_attendance.py"])
+
 # ---------------- LOGIN FUNCTION ----------------
 def login():
     username = username_entry.get()
     password = password_entry.get()
 
-    if username == "admin" and password == "admin123":
-        messagebox.showinfo("Login Successful", "Welcome!")
-        app.destroy()
-        subprocess.Popen([sys.executable, "gui_attendance.py"])
-#you can also add your login credentials like this show below.
-    elif username == "aaditya" and password == "aaditya123":
-        messagebox.showinfo("Login Successful", "Welcome!")
-        app.destroy()
-        subprocess.Popen([sys.executable, "gui_attendance.py"])
-        
+    if USERS.get(username) == password:
+        launch_attendance_app()
     else:
         messagebox.showerror("Login Failed", "Invalid Username or Password")
 
